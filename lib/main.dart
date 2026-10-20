@@ -46,7 +46,8 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
   final _saved = <String>{'Museum'};
   bool _savedOnly = false;
 
-  List<String> get _visiblePlaces => _places;
+  List<String> get _visiblePlaces =>
+      _savedOnly ? _places.where(_saved.contains).toList() : _places;
 
   @override
   Widget build(BuildContext context) {
